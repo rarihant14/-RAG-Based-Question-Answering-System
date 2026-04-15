@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neural RAG Console</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="bg-glow bg-glow-left"></div>
+  <div class="bg-glow bg-glow-right"></div>
+
+  <main class="shell">
+    <section class="hero panel">
+      <div class="hero-copy">
+        <p class="eyebrow">Retrieval-Augmented Intelligence</p>
+        <h1>Neural RAG Console</h1>
+        <p class="lede">
+          Upload documents, index them into your vector pipeline, and query them through a live streaming interface.
+        </p>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-label">Mode</span>
+            <strong>Realtime</strong>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Pipeline</span>
+            <strong>Hybrid Search</strong>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Surface</span>
+            <strong>Local Control</strong>
+          </div>
+        </div>
+      </div>
+      <div class="hero-orb">
+        <div class="orb-ring orb-ring-a"></div>
+        <div class="orb-ring orb-ring-b"></div>
+        <img class="hero-image" src="hero-visual.svg" alt="Futuristic AI knowledge network illustration">
+      </div>
+    </section>
+
+    <section class="workspace">
+      <article class="panel control-panel">
+        <div class="panel-head">
+          <p class="eyebrow">Ingestion</p>
+          <h2>Upload Knowledge</h2>
+        </div>
+
+        <label class="upload-zone" for="file">
+          <input type="file" id="file">
+          <span class="upload-icon">+</span>
+          <span class="upload-title">Drop a file or click to browse</span>
+          <span class="upload-subtitle">PDF and text documents work best for this pipeline.</span>
+        </label>
+
+        <button id="uploadBtn" class="primary-btn" type="button">Index Document</button>
+        <p id="uploadStatus" class="status-line">Waiting for a document.</p>
+      </article>
+
+      <article class="panel chat-panel">
+        <div class="panel-head">
+          <p class="eyebrow">Inference</p>
+          <h2>Ask the System</h2>
+        </div>
+
+        <label class="input-label" for="query">Prompt</label>
+        <div class="chat-input-row">
+          <input id="query" placeholder="Ask about the uploaded knowledge base..." autocomplete="off">
+          <button id="chatBtn" class="secondary-btn" type="button">Transmit</button>
+        </div>
+
+        <div class="response-wrap">
+          <div class="response-head">
+            <span>Live Response Stream</span>
+            <span id="streamState" class="stream-state">Idle</span>
+          </div>
+          <pre id="response" class="response-output">System standing by.</pre>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
